@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
+import styles from "../../page.module.css";
 
 export type PropsId = {
     params: {
@@ -30,10 +31,10 @@ export default async function Post({ params: { id } }: PropsId) {
 
     return (
         <>
-            <h1>
+            <h1 className={styles.code}>
                 Post {id}. {post.title.toUpperCase()}
             </h1>
-            <p>
+            <p className={styles.description}>
                 {post.body.slice(0, 1).toUpperCase() + post.body.slice(1) + "."}
             </p>
             <></>

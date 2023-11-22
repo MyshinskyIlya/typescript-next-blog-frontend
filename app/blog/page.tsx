@@ -21,10 +21,14 @@ export default async function page() {
     const posts = await getData();
     return (
         <>
-            <h1>Blog page</h1>
+            <h1 className={styles.code}>Blog page</h1>
             <ul>
                 {posts.map((i: any) => (
-                    <Link href={`/blog/${i.id}`} key={i.id}>
+                    <Link
+                        href={`/blog/${i.id}`}
+                        key={i.id}
+                        className={styles.code}
+                    >
                         <li className={styles.card}>
                             {i.id}.{" "}
                             {i.title.slice(0, 1).toUpperCase() +
