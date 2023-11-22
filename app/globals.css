@@ -8,6 +8,7 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --my-color: #29292979;
 
     --primary-glow: conic-gradient(
         from 180deg at 50% 50%,
@@ -45,7 +46,6 @@
         --foreground-rgb: 255, 255, 255;
         --background-start-rgb: 0, 0, 0;
         --background-end-rgb: 0, 0, 0;
-
         --primary-glow: radial-gradient(
             rgba(1, 65, 255, 0.4),
             rgba(1, 65, 255, 0)
@@ -56,7 +56,7 @@
             rgba(1, 65, 255, 0),
             rgba(1, 65, 255, 0.3)
         );
-
+        --my-color: #a3a3a369;
         --tile-start-rgb: 2, 13, 46;
         --tile-end-rgb: 2, 5, 19;
         --tile-border: conic-gradient(
@@ -123,7 +123,7 @@ header {
     align-items: center;
     justify-content: start;
     gap: 1rem;
-    color: #ffffff80;
+    color: var(--my-color);
     background-color: #fffffa10;
     font-size: 18px;
     padding: 1rem 2rem;
@@ -143,7 +143,7 @@ footer {
 }
 
 .active {
-    color: #fff;
+    color: rgb(var(--foreground-rgb));
 }
 
 @media (prefers-color-scheme: dark) {
