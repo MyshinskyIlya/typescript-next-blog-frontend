@@ -29,4 +29,5 @@ const PostSearch = React.memo(({ onSearch }: PropsSearch) => {
     );
 });
 
+PostSearch.displayName = "PostSearch";
 export default PostSearch;
