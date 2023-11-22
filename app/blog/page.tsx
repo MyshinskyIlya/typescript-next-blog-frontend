@@ -1,11 +1,10 @@
 "use client";
 
-import { Metadata } from "next";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
 
-export default function Blog() {
+const Blog = () => {
     const [posts, setPosts] = useState<any[]>([]);
 
     const [loading, setLoading] = useState(true);
@@ -33,4 +32,6 @@ export default function Blog() {
             </ul>
         </>
     );
-}
+};
+
+export default Blog;
