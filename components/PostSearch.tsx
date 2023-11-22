@@ -6,7 +6,7 @@ type PropsSearch = {
     onSearch: (value: any[]) => void;
 };
 
-export const PostSearch = React.memo(({ onSearch }: PropsSearch) => {
+const PostSearch = React.memo(({ onSearch }: PropsSearch) => {
     const [search, setSearch] = useState<string>("");
 
     const handleSumbit: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -28,3 +28,5 @@ export const PostSearch = React.memo(({ onSearch }: PropsSearch) => {
         </form>
     );
 });
+
+export default PostSearch;
