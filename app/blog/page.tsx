@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
 
-export default function page() {
+export default function Blog() {
     const [posts, setPosts] = useState<any[]>([]);
 
     const [loading, setLoading] = useState(true);
