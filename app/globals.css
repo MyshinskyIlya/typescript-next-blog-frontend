@@ -123,6 +123,7 @@ header {
     align-items: center;
     justify-content: start;
     gap: 1rem;
+    color: #ffffff80;
     background-color: #fffffa10;
     font-size: 18px;
     padding: 1rem 2rem;
@@ -139,6 +140,10 @@ footer {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
+}
+
+.active {
+    color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
