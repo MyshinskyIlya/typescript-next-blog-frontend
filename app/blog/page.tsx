@@ -5,10 +5,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
 
-export const metadata: Metadata = {
-    title: "Blog | Next App",
-};
-
 export default function page() {
     const [posts, setPosts] = useState<any[]>([]);
 
