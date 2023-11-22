@@ -2,25 +2,20 @@
 
 import { Metadata } from "next";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
-
-async function getData() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-        next: {
-            revalidate: 60,
-        },
-    });
-
-    return response.json();
-}
 
 export const metadata: Metadata = {
     title: "Blog | Next App",
 };
 
-export default async function page() {
-    const posts = await getData();
+export default function page() {
+    const [posts, setPosts] = useState<any[]>([]);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {}, []);
+
     return (
         <>
             <h1 className={styles.code}>Blog page</h1>
