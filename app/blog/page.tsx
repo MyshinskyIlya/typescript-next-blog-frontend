@@ -4,6 +4,7 @@ import React, { FC, useEffect, useState } from "react";
 import styles from "../page.module.css";
 import { getAllPosts } from "@/services/getPosts";
 import { Posts } from "@/components/Posts";
+import { PostSearch } from "@/components/PostSearch";
 
 const Blog: FC = () => {
     const [posts, setPosts] = useState<any[]>([]);
@@ -23,6 +24,7 @@ const Blog: FC = () => {
             ) : (
                 <>
                     <h1 className={styles.code}>Blog page</h1>
+                    <PostSearch onSearch={setPosts}></PostSearch>
                     <Posts posts={posts}></Posts>
                 </>
             )}

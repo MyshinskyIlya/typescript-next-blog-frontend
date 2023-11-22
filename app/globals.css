@@ -146,6 +146,30 @@ footer {
     color: rgb(var(--foreground-rgb));
 }
 
+.searchInput {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 0.75rem;
+}
+
+.searchInput input {
+    outline: none;
+    border: none;
+    background-color: #42424280;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    border-radius: 12px 0px 0px 12px;
+}
+
+.searchInput button {
+    outline: none;
+    border: none;
+    background-color: #42424280;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border-radius: 0px 12px 12px 0px;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
