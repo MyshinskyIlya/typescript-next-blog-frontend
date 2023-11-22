@@ -24,8 +24,8 @@ export default async function page() {
             <h1>Blog page</h1>
             <ul>
                 {posts.map((i: any) => (
-                    <Link href={`/blog/${i.id}`}>
-                        <li key={i.id} className={styles.card}>
+                    <Link href={`/blog/${i.id}`} key={i.id}>
+                        <li className={styles.card}>
                             {i.id}.{" "}
                             {i.title.slice(0, 1).toUpperCase() +
                                 i.title.slice(1) +
