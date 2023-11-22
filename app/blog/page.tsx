@@ -4,11 +4,6 @@ import React, { FC, useEffect, useState } from "react";
 import styles from "../page.module.css";
 import { getAllPosts } from "@/services/getPosts";
 import { Posts } from "@/components/Posts";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "About | Next App",
-};
 
 const Blog: FC = () => {
     const [posts, setPosts] = useState<any[]>([]);
