@@ -1,35 +1,36 @@
 "use client";
 
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styles from "../page.module.css";
+import { getAllPosts } from "@/services/getPosts";
+import { Posts } from "@/components/Posts";
+import { Metadata } from "next";
 
-const Blog = () => {
+export const metadata: Metadata = {
+    title: "About | Next App",
+};
+
+const Blog: FC = () => {
     const [posts, setPosts] = useState<any[]>([]);
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        getAllPosts()
+            .then(setPosts)
+            .finally(() => setLoading(false));
+    }, []);
 
     return (
         <>
-            <h1 className={styles.code}>Blog page</h1>
-            <ul>
-                {posts.map((i: any) => (
-                    <Link
-                        href={`/blog/${i.id}`}
-                        key={i.id}
-                        className={styles.code}
-                    >
-                        <li className={styles.card}>
-                            {i.id}.{" "}
-                            {i.title.slice(0, 1).toUpperCase() +
-                                i.title.slice(1) +
-                                "."}
-                        </li>
-                    </Link>
-                ))}
-            </ul>
+            {loading ? (
+                <h3 className={`${styles.center} ${styles.code}`}></h3>
+            ) : (
+                <>
+                    <h1 className={styles.code}>Blog page</h1>
+                    <Posts posts={posts}></Posts>
+                </>
+            )}
         </>
     );
 };

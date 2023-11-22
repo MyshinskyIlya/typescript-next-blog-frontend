@@ -30,14 +30,13 @@ export default async function Post({ params: { id } }: PropsId) {
     const post = await getPost(id);
 
     return (
-        <>
+        <div style={{ marginBottom: "10vh" }}>
             <h1 className={styles.code}>
                 Post {id}. {post.title.toUpperCase()}
             </h1>
             <p className={styles.description}>
                 {post.body.slice(0, 1).toUpperCase() + post.body.slice(1) + "."}
             </p>
-            <></>
-        </>
+        </div>
     );
 }
