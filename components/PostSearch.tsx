@@ -1,20 +1,21 @@
 "use client";
 import { getPostsBySearch } from "@/services/getPosts";
 import React, { FormEventHandler, useState } from "react";
+import useSWR from "swr";
+// import { usePosts } from "@/store";
 
-type PropsSearch = {
-    onSearch: (value: any[]) => void;
-};
-
-const PostSearch = React.memo(({ onSearch }: PropsSearch) => {
+const PostSearch = React.memo(() => {
+    const { mutate } = useSWR("posts");
     const [search, setSearch] = useState<string>("");
+
+    // const getPostsBySearch = usePosts((state) => state.getPostsBySearch);
 
     const handleSumbit: FormEventHandler<HTMLFormElement> = async (event) => {
         event.preventDefault();
 
         const posts = await getPostsBySearch(search);
 
-        onSearch(posts);
+        mutate(posts);
     };
     return (
         <form onSubmit={handleSumbit} className="searchInput">

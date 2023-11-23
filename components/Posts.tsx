@@ -1,13 +1,28 @@
+"use client";
+
+import useSWR from "swr";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../app/page.module.css";
+import { getAllPosts } from "@/services/getPosts";
+// import { usePosts } from "@/store";
+// import { shallow } from "zustand/shallow";
 
-type PropsPost = {
-    posts: any[];
-};
+export const Posts = () => {
+    const { data: posts, isLoading } = useSWR("posts", getAllPosts);
+    // const [posts, loading, getAllPosts] = usePosts(
+    //     (state) => [state.posts, state.loading, state.getAllPosts],
+    //     shallow
+    // );
 
-export const Posts = ({ posts }: PropsPost) => {
-    return (
+    // useEffect(() => {
+    //     getAllPosts();
+    // }, [getAllPosts]);
+
+    return isLoading ? (
+        <h3 className={`${styles.center} ${styles.code}`}></h3>
+    ) : (
         <>
             <ul>
                 {posts.map((i: any) => (
