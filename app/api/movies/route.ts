@@ -7,7 +7,5 @@ export async function GET(req: Request) {
     const movies = fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}
     `).then((res) => res.json());
 
-    console.log(movies);
-
     return NextResponse.json(movies);
 }
