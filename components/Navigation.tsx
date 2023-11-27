@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SessionProvider, useSession } from "next-auth/react";
 
 type Navlink = {
     label: string;
@@ -15,6 +16,9 @@ type PropsNavigation = {
 
 export default function Navigation({ navLinks }: PropsNavigation) {
     const pathname = usePathname();
+    const session = useSession();
+
+    console.log(session);
 
     return (
         <>
