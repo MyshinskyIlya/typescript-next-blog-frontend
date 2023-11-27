@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SessionProvider, useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 type Navlink = {
     label: string;
@@ -35,6 +35,21 @@ export default function Navigation({ navLinks }: PropsNavigation) {
                     </Link>
                 );
             })}
+            {session?.data && <Link href="/profile">Profile</Link>}
+            {session?.data ? (
+                <Link
+                    href="#"
+                    onClick={() =>
+                        signOut({
+                            callbackUrl: "/",
+                        })
+                    }
+                >
+                    SignOut
+                </Link>
+            ) : (
+                <Link href="/api/auth/signin">SignIn</Link>
+            )}
         </>
     );
 }
