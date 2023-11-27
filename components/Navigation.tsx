@@ -48,7 +48,7 @@ export default function Navigation({ navLinks }: PropsNavigation) {
                     SignOut
                 </Link>
             ) : (
-                <Link href="/api/auth/signin">SignIn</Link>
+                <Link href="/signin">SignIn</Link>
             )}
         </>
     );

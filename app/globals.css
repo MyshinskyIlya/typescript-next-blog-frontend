@@ -142,8 +142,16 @@ footer {
     margin: 0 auto;
 }
 
+.mono {
+    font-family: var(--font-mono);
+}
+
 .active {
     color: rgb(var(--foreground-rgb));
+}
+
+.avatar {
+    border-radius: 50%;
 }
 
 .searchInput {
@@ -168,6 +176,58 @@ footer {
     padding: 0.4rem 1rem;
     cursor: pointer;
     border-radius: 0px 12px 12px 0px;
+}
+
+.signIn-btn {
+    outline: none;
+    border: none;
+    background-color: #42424280;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 6px;
+    width: 300px;
+}
+
+.signIn-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #42424280;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.signIn-form label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.signIn-form input {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signIn-form button {
+    outline: none;
+    border: none;
+    background-color: #42424280;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.signIn-form button:hover {
+    background-color: #5d5d5d80;
 }
 
 @media (prefers-color-scheme: dark) {

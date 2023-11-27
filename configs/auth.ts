@@ -2,6 +2,7 @@ import type { AuthOptions, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials"; // Логин и пароль
 import { users } from "@/assets/users";
+import { pages } from "next/dist/build/templates/app-page";
 
 export const authConfig: AuthOptions = {
     providers: [
@@ -40,4 +41,7 @@ export const authConfig: AuthOptions = {
             },
         }),
     ],
+    pages: {
+        signIn: "/signin",
+    },
 };
